@@ -66,4 +66,30 @@ body {
   }
 
 
+  @media (max-width: 600px) {
+    body {
+      padding: 1rem;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  
+    .dropdown-container {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .dropdown-container select {
+      width: 100%;
+    }
+  
+    .card {
+      padding: 1rem;
+      font-size: 0.95rem;
+    }
+  }
+  
+
   

@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
   
-    // 1. Hae teatterit
+    // 1. Haetaan teatterit
     fetch('https://www.finnkino.fi/xml/TheatreAreas/')
       .then(res => res.text())
       .then(xmlStr => (new window.DOMParser()).parseFromString(xmlStr, "text/xml"))
@@ -33,17 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
   
-    // 2. Kun käyttäjä valitsee teatterin
+    // 2. teatterin valinta
     teatteriSelect.addEventListener('change', () => {
       const valittuId = teatteriSelect.value;
       if (!valittuId) return;
       haeNäytökset(valittuId);
     });
   
-    // 3. Näytösten haku
+    // 3. näytösten haku
     function haeNäytökset(areaId) {
       const osoite = `https://www.finnkino.fi/xml/Schedule/?area=${areaId}`;
-      Leffasäilö.innerHTML = '<p>Ladataan näytökset...</p>';
   
       fetch(osoite)
         .then(res => res.text())
@@ -73,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             Leffasäilö.appendChild(kortti);
           }
         })
+
         .catch(err => {
           console.error('Virhe haettaessa näytöksiä:', err);
           Leffasäilö.innerHTML = '<p>Virhe haettaessa näytöksiä.</p>';
