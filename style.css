@@ -27,6 +27,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 12px;
     background-color: white;
+    border-color: black;
     margin-bottom: 8px;
     font-size: 1.3rem;
     appearance: none;
