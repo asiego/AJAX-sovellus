@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             Leffasäilö.innerHTML = '<p>Ei näytöksiä saatavilla.</p>';
             return;
           }
-  
+          // Prosessoidaan ja näytetään XML-data
           for (let i = 0; i < shows.length; i++) {
             const show = shows[i];
             const nimi = show.getElementsByTagName('Title')[0].textContent;
