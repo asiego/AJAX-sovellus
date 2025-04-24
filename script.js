@@ -43,7 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. näytösten haku
     function haeNäytökset(areaId) {
       const osoite = `https://www.finnkino.fi/xml/Schedule/?area=${areaId}`;
-  
+        
+      // 4. Haetaan ja parsitaan XML-data
       fetch(osoite)
         .then(res => res.text())
         .then(xmlStr => (new window.DOMParser()).parseFromString(xmlStr, "text/xml"))
@@ -72,7 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
             Leffasäilö.appendChild(kortti);
           }
         })
-
+        
+        // 5. virheilmoitus
         .catch(err => {
           console.error('Virhe haettaessa näytöksiä:', err);
           Leffasäilö.innerHTML = '<p>Virhe haettaessa näytöksiä.</p>';
