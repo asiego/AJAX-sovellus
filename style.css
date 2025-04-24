@@ -28,11 +28,12 @@ body {
     border-radius: 12px;
     background-color: white;
     margin-bottom: 8px;
-    font-size: 1rem;
+    font-size: 1.3rem;
     appearance: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     display: block;
     margin: 0 auto 2rem auto;
+    text-align: center;
   }
 
   /* Leffanäytösten muotoilu */
